@@ -8,7 +8,7 @@ const app = express()
 const morgan = require("morgan")
 const cors = require("cors")
 const mongoose = require("mongoose")
-
+const Food = require("./model/food")
 //////////////////////
 // Declare Middleware
 //////////////////////
@@ -28,7 +28,7 @@ mongoose.connection
 ///////////////////////
 // INDUCES - Index, New, Delete, Update, Create, Edit, Show
 app.get("/", (req, res) => {
-    res.send("Please add --- to the end of your Url.")
+    res.send("Please add 'food' to the end of your Url.")
 })
 
 app.get("/food", async (req, res) => {
@@ -42,7 +42,7 @@ app.get("/food", async (req, res) => {
 app.post("/food", async (req, res) => {
     try {
         res.json( await Food.create(req.body))
-    } catch {
+    } catch(error){
         res.status(400).json(error)
     }
 })
