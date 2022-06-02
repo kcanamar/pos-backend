@@ -1,5 +1,8 @@
 Follows MVC layout and works to modulerize server components
 
+### Api End Point 
+https://karc-pos-backend.herokuapp.com/
+
 ### Api Routes
 
 |Routes|Method|EndPoints|Expected Result|
